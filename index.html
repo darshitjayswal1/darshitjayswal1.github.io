@@ -41,7 +41,7 @@ body{
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:2px}
 
-/* ─── GRID BACKGROUND ─── */
+/* GRID BACKGROUND */
 .grid-bg{
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:
@@ -50,7 +50,7 @@ body{
   background-size:48px 48px;
 }
 
-/* ─── NAV ─── */
+/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   height:56px;
@@ -86,7 +86,7 @@ nav{
 }
 .nav-cta:hover{background:#62ffaa;transform:translateY(-1px)}
 
-/* ─── HERO ─── */
+/* HERO */
 #hero{
   min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;
@@ -101,7 +101,6 @@ nav{
   align-items:center;
 }
 
-/* Photo column */
 .hero-photo-col{
   display:flex;justify-content:center;align-items:center;
 }
@@ -146,7 +145,6 @@ nav{
   z-index:2;
 }
 
-/* Role badge */
 .hero-role-tag{
   display:inline-flex;align-items:center;gap:6px;
   font-size:12px;font-weight:400;
@@ -159,7 +157,6 @@ nav{
 .hero-role-tag .rt-colon{color:var(--text3)}
 .hero-role-tag .rt-sep{color:var(--text3)}
 
-/* Impact headline */
 .hero-h1{
   font-family:'Space Mono',monospace;
   font-size:clamp(2.6rem,5.2vw,4.8rem);
@@ -172,7 +169,6 @@ nav{
 .hero-h1 .line2{color:var(--green);display:block}
 .hero-h1 .word-out{color:var(--text1)}
 
-/* Typed sub-role */
 .hero-typed-row{
   font-size:13px;color:var(--text2);
   display:flex;align-items:center;gap:4px;
@@ -217,7 +213,6 @@ nav{
 }
 .btn-ghost:hover{border-color:var(--bord2);color:var(--green);transform:translateY(-2px)}
 
-/* Stat cards */
 .stats-row{
   display:grid;grid-template-columns:repeat(4,1fr);
   gap:12px;
@@ -239,14 +234,13 @@ nav{
 }
 .stat-label{font-size:11px;color:var(--text2);letter-spacing:.04em}
 
-/* ─── MOBILE: hero stacks ─── */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;max-width:640px}
   .hero-photo-col{order:-1}
   .hero-photo-wrap{width:200px;height:200px}
 }
 
-/* ─── SECTIONS ─── */
+/* SECTIONS */
 section{padding:96px 5vw;position:relative;z-index:1}
 .section-inner{max-width:1080px;margin:0 auto}
 .eyebrow{
@@ -257,14 +251,13 @@ h2.sh2{
   font-family:'Space Mono',monospace;
   font-size:clamp(1.6rem,3vw,2.3rem);
   font-weight:700;letter-spacing:-.015em;
-  margin-bottom:3rem;color:var(--text1);
+  margin-bottom:2rem;color:var(--text1);
 }
 h2.sh2 span{color:var(--green)}
 
-/* Section dividers */
 section:not(#hero){border-top:1px solid var(--border)}
 
-/* ─── ABOUT ─── */
+/* ABOUT */
 #about{background:var(--bg)}
 .about-grid{
   display:grid;grid-template-columns:1fr 280px;
@@ -292,7 +285,7 @@ section:not(#hero){border-top:1px solid var(--border)}
 .quick-label{font-size:10px;color:var(--text3);margin-bottom:2px;letter-spacing:.06em;text-transform:uppercase}
 .quick-val{font-size:12px;font-weight:500;color:var(--text1)}
 
-/* ─── SKILLS ─── */
+/* SKILLS */
 #skills{background:var(--bg2)}
 .skills-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
@@ -333,12 +326,69 @@ section:not(#hero){border-top:1px solid var(--border)}
   color:var(--green);
 }
 
-/* ─── PROJECTS ─── */
+/* PROJECTS */
 #projects{background:var(--bg)}
+
+/* Filter tabs */
+.proj-filter{
+  display:flex;gap:8px;flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.pf-btn{
+  font-family:'Fira Code',monospace;
+  font-size:11px;font-weight:500;
+  color:var(--text2);
+  background:var(--bg2);
+  border:1px solid var(--border);
+  padding:6px 16px;border-radius:3px;
+  cursor:pointer;
+  transition:all .2s;
+  letter-spacing:.04em;
+}
+.pf-btn:hover{color:var(--green);border-color:var(--bord2)}
+.pf-btn.active{
+  color:var(--green);
+  background:var(--green3);
+  border-color:var(--bord2);
+}
+
 .projects-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(370px,1fr));
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));
   gap:20px;
 }
+
+/* Category badge */
+.proj-category{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 10px;border-radius:3px;
+  margin-bottom:10px;
+}
+.proj-category.powerbi{
+  color:#e8a83e;
+  background:rgba(232,168,62,.1);
+  border:1px solid rgba(232,168,62,.2);
+}
+.proj-category.python{
+  color:var(--green);
+  background:var(--green3);
+  border:1px solid var(--bord2);
+}
+
+/* Mini chart preview */
+.proj-chart-preview{
+  width:100%;height:72px;
+  border-radius:4px;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  margin-bottom:14px;
+  overflow:hidden;
+  display:flex;align-items:flex-end;
+  padding:6px 8px 8px;
+  gap:2px;
+}
+
 .proj-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:6px;padding:1.7rem;
@@ -358,6 +408,8 @@ section:not(#hero){border-top:1px solid var(--border)}
   box-shadow:0 16px 48px rgba(0,0,0,.4),0 0 40px rgba(57,255,138,.05);
 }
 .proj-card:hover::before{transform:scaleX(1)}
+.proj-card.hidden{display:none}
+
 .proj-num{
   font-size:10px;color:var(--text3);margin-bottom:10px;
   letter-spacing:.08em;text-transform:uppercase;
@@ -385,6 +437,7 @@ section:not(#hero){border-top:1px solid var(--border)}
   font-size:10px;padding:3px 9px;border-radius:3px;
   letter-spacing:.04em;text-transform:uppercase;
 }
+.proj-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .proj-link{
   font-size:12px;color:var(--green);text-decoration:none;
   display:inline-flex;align-items:center;gap:6px;
@@ -392,8 +445,13 @@ section:not(#hero){border-top:1px solid var(--border)}
   letter-spacing:.04em;
 }
 .proj-link:hover{gap:10px}
+.proj-link.secondary{
+  font-size:11px;color:var(--text2);
+  transition:color .2s;
+}
+.proj-link.secondary:hover{color:var(--text1)}
 
-/* ─── EXPERIENCE ─── */
+/* EXPERIENCE */
 #experience{background:var(--bg2)}
 .exp-timeline{position:relative;padding-left:24px}
 .exp-timeline::before{
@@ -444,7 +502,7 @@ section:not(#hero){border-top:1px solid var(--border)}
 }
 .exp-bullets li strong{color:var(--text1);font-weight:500}
 
-/* ─── CERTIFICATIONS ─── */
+/* CERTIFICATIONS */
 #certifications{background:var(--bg)}
 .certs-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
@@ -465,7 +523,7 @@ section:not(#hero){border-top:1px solid var(--border)}
 }
 .cert-name{font-size:12px;font-weight:500;color:var(--text1);line-height:1.4}
 
-/* ─── CONTACT ─── */
+/* CONTACT */
 #contact{background:var(--bg2);text-align:center}
 .contact-inner{max-width:620px;margin:0 auto}
 .contact-h{
@@ -498,7 +556,7 @@ section:not(#hero){border-top:1px solid var(--border)}
   letter-spacing:.06em;
 }
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{
   padding:1.6rem 5vw;text-align:center;
   border-top:1px solid var(--border);
@@ -507,7 +565,7 @@ footer{
 }
 footer a{color:var(--green2);text-decoration:none}
 
-/* ─── SCROLL REVEAL ─── */
+/* SCROLL REVEAL */
 .reveal{
   opacity:0;transform:translateY(26px);
   transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);
@@ -518,7 +576,7 @@ footer a{color:var(--green2);text-decoration:none}
 .rd3{transition-delay:.24s}
 .rd4{transition-delay:.32s}
 
-/* ─── MOBILE ─── */
+/* MOBILE */
 @media(max-width:880px){
   .about-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
@@ -530,10 +588,9 @@ footer a{color:var(--green2);text-decoration:none}
 </head>
 <body>
 
-<!-- fixed grid background -->
 <div class="grid-bg"></div>
 
-<!-- ─── NAV ─── -->
+<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-brand">
     <span class="prompt">&gt;</span> darshit_jayswal
@@ -552,11 +609,9 @@ footer a{color:var(--green2);text-decoration:none}
   <a href="mailto:darshitjayswal1@gmail.com" class="nav-cta">hire_me()</a>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-
-    <!-- LEFT -->
     <div class="hero-left">
       <div class="hero-role-tag">
         <span class="rt-colon">role:</span>
@@ -566,30 +621,24 @@ footer a{color:var(--green2);text-decoration:none}
         <span class="rt-sep">·</span>
         bi analyst
       </div>
-
       <h1 class="hero-h1">
         <span class="line1">Raw data in.</span>
         <span class="line2">Revenue decisions <span class="word-out">out.</span></span>
       </h1>
-
       <div class="hero-typed-row">
         <span class="typed-prefix">open_to:</span>&nbsp;
         <span class="typed-word" id="typed-text"></span>
         <span class="cursor"></span>
       </div>
-
       <p class="hero-bio">
         Darshit Jayswal — Data &amp; Business Analyst, <strong>8 years</strong> turning messy business data
         into clear, money-relevant decisions with <strong>Power BI</strong>, <strong>SQL</strong> and <strong>Python</strong>.
       </p>
-
       <div class="cta-row">
         <a href="#projects" class="btn-primary">view_projects()&nbsp;→</a>
         <a href="https://linkedin.com/in/darshitjayswal" target="_blank" rel="noopener" class="btn-ghost">linkedin</a>
       </div>
     </div>
-
-    <!-- RIGHT: photo -->
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
         <img
@@ -601,31 +650,29 @@ footer a{color:var(--green2);text-decoration:none}
         <div class="hero-photo-fallback" style="display:none">DJ</div>
       </div>
     </div>
-
   </div>
 
-  <!-- Stat cards — full width below -->
   <div class="stats-row">
     <div class="stat-card">
       <div class="stat-num"><span class="counter" data-target="8">0</span> yrs</div>
       <div class="stat-label">experience</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num"><span class="counter" data-target="100">0</span>+</div>
-      <div class="stat-label">projects</div>
+      <div class="stat-num"><span class="counter" data-target="5">0</span></div>
+      <div class="stat-label">portfolio_projects</div>
     </div>
     <div class="stat-card">
       <div class="stat-num"><span class="counter" data-target="20">0</span>%</div>
-      <div class="stat-label">yoy growth</div>
+      <div class="stat-label">yoy_growth</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num"><span class="counter" data-target="95">0</span>%</div>
-      <div class="stat-label">error_cut</div>
+      <div class="stat-num"><span class="counter" data-target="970">0</span>K</div>
+      <div class="stat-label">revenue_impact</div>
     </div>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="eyebrow">// 01. about</div>
@@ -671,7 +718,7 @@ footer a{color:var(--green2);text-decoration:none}
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <div class="eyebrow">// 02. skills</div>
@@ -709,9 +756,10 @@ footer a{color:var(--green2);text-decoration:none}
           <span class="stag hi">Python</span>
           <span class="stag">Pandas</span>
           <span class="stag">NumPy</span>
+          <span class="stag">SciPy</span>
+          <span class="stag">Plotly</span>
           <span class="stag">ETL / Pipelines</span>
           <span class="stag">Data Cleaning</span>
-          <span class="stag">KPI Monitoring</span>
         </div>
       </div>
       <div class="skill-card reveal rd2">
@@ -720,37 +768,71 @@ footer a{color:var(--green2);text-decoration:none}
           <div class="skill-card-title">analysis_business</div>
         </div>
         <div class="skill-tags">
+          <span class="stag hi">A/B Testing</span>
           <span class="stag hi">Churn / RFM</span>
           <span class="stag hi">Cohort Analysis</span>
+          <span class="stag">Funnel Analytics</span>
+          <span class="stag">Statistical Testing</span>
           <span class="stag">Market Research</span>
           <span class="stag">Competitive Intel</span>
           <span class="stag">Data Storytelling</span>
           <span class="stag">KPI Definition</span>
-          <span class="stag">Stakeholder Mgmt</span>
-          <span class="stag">B2B Research</span>
-          <span class="stag">User Behaviour</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── PROJECTS ─── -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
     <div class="eyebrow">// 03. featured work</div>
     <h2 class="sh2">what I've <span>built</span></h2>
+
+    <div class="proj-filter">
+      <button class="pf-btn active" data-filter="all">all_projects (5)</button>
+      <button class="pf-btn" data-filter="powerbi">power_bi (2)</button>
+      <button class="pf-btn" data-filter="python">python (3)</button>
+    </div>
+
     <div class="projects-grid">
 
-      <div class="proj-card reveal">
-        <div class="proj-num">project_01 · power-bi · sql · python</div>
-        <h3 class="proj-title">Customer Churn &amp; Retention Analytics</h3>
+      <!-- PROJECT 01 — Power BI -->
+      <div class="proj-card reveal" data-category="powerbi">
+        <div class="proj-category powerbi">Power BI</div>
+        <div class="proj-num">project_01 · power-bi · dax · sql · python</div>
+        <h3 class="proj-title">Customer Churn & Retention Analytics</h3>
+
+        <!-- Mini chart: churn arc + bar -->
+        <div class="proj-chart-preview" style="align-items:center;padding:10px 14px;gap:0">
+          <svg width="100%" height="100%" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Churn arc donut -->
+            <circle cx="26" cy="26" r="20" stroke="rgba(57,255,138,.12)" stroke-width="6" fill="none"/>
+            <circle cx="26" cy="26" r="20" stroke="#18cc65" stroke-width="6" fill="none"
+              stroke-dasharray="33 93" stroke-dashoffset="23" stroke-linecap="round"/>
+            <text x="26" y="30" text-anchor="middle" fill="#39ff8a" font-size="9" font-family="Space Mono">26.5%</text>
+            <text x="26" y="47" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">churn</text>
+            <!-- Bar chart segments -->
+            <rect x="60" y="30" width="16" height="22" rx="2" fill="rgba(57,255,138,.3)"/>
+            <rect x="82" y="18" width="16" height="34" rx="2" fill="rgba(57,255,138,.5)"/>
+            <rect x="104" y="8" width="16" height="44" rx="2" fill="rgba(57,255,138,.7)"/>
+            <rect x="126" y="22" width="16" height="30" rx="2" fill="rgba(57,255,138,.4)"/>
+            <text x="68" y="48" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">Q1</text>
+            <text x="90" y="48" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">Q2</text>
+            <text x="112" y="48" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">Q3</text>
+            <text x="134" y="48" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">Q4</text>
+            <!-- Metric callout -->
+            <text x="175" y="18" fill="#6b7f71" font-size="8" font-family="Fira Code">revenue_at_risk</text>
+            <text x="175" y="33" fill="#39ff8a" font-size="16" font-family="Space Mono" font-weight="700">₹5.1L</text>
+            <text x="175" y="46" fill="#3d4f43" font-size="7" font-family="Fira Code">per month · found &amp; targeted</text>
+          </svg>
+        </div>
+
         <div class="proj-metric">₹5.1L/month revenue at risk — found &amp; targeted</div>
         <p class="proj-desc">
           End-to-end 3-page Power BI dashboard analysing 7,043 subscribers with dimensional modelling,
-          DAX time-intelligence, and RFM segmentation. Surfaced that 45.8% of churn occurs within the
-          first 90 days. Authored 8 SQL queries covering cohort retention and contract-tier churn
-          (Monthly 29.5% vs Two-Year 5.9%).
+          DAX time-intelligence, and RFM segmentation. 45.8% of churn occurs within the first 90 days.
+          8 SQL queries covering cohort retention and contract-tier churn (Monthly 29.5% vs Two-Year 5.9%).
         </p>
         <div class="proj-tags">
           <span class="proj-tag">Power BI</span>
@@ -760,19 +842,50 @@ footer a{color:var(--green2);text-decoration:none}
           <span class="proj-tag">RFM</span>
           <span class="proj-tag">Cohort Analysis</span>
         </div>
-        <a href="https://github.com/darshitjayswal1/customer-churn-retention-analytics"
-           target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        <div class="proj-links">
+          <a href="https://github.com/darshitjayswal1/customer-churn-retention-analytics"
+             target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        </div>
       </div>
 
-      <div class="proj-card reveal rd2">
+      <!-- PROJECT 02 — Power BI -->
+      <div class="proj-card reveal rd2" data-category="powerbi">
+        <div class="proj-category powerbi">Power BI</div>
         <div class="proj-num">project_02 · power-bi · dax · sql</div>
         <h3 class="proj-title">AI-Driven Tech Layoffs 2026</h3>
+
+        <!-- Mini chart: trend line -->
+        <div class="proj-chart-preview" style="align-items:flex-end;gap:0">
+          <svg width="100%" height="100%" viewBox="0 0 280 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Year bars -->
+            <rect x="10"  y="48" width="24" height="4"  rx="1" fill="rgba(57,255,138,.25)"/>
+            <rect x="42"  y="38" width="24" height="14" rx="1" fill="rgba(57,255,138,.35)"/>
+            <rect x="74"  y="28" width="24" height="24" rx="1" fill="rgba(57,255,138,.45)"/>
+            <rect x="106" y="10" width="24" height="42" rx="1" fill="rgba(57,255,138,.65)"/>
+            <rect x="138" y="20" width="24" height="32" rx="1" fill="rgba(57,255,138,.55)"/>
+            <rect x="170" y="5"  width="24" height="47" rx="1" fill="#39ff8a"/>
+            <!-- Trend line -->
+            <polyline points="22,46 54,36 86,26 118,8 150,18 182,3"
+              stroke="#18cc65" stroke-width="1.5" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+            <!-- Labels -->
+            <text x="22"  y="56" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">2020</text>
+            <text x="54"  y="56" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">2021</text>
+            <text x="86"  y="56" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">2022</text>
+            <text x="118" y="56" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">2023</text>
+            <text x="150" y="56" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">2024</text>
+            <text x="182" y="56" text-anchor="middle" fill="#39ff8a" font-size="7" font-family="Fira Code">2026</text>
+            <!-- Right callout -->
+            <text x="220" y="18" fill="#6b7f71" font-size="8" font-family="Fira Code">layoffs</text>
+            <text x="218" y="33" fill="#39ff8a" font-size="15" font-family="Space Mono" font-weight="700">920K+</text>
+            <text x="218" y="46" fill="#3d4f43" font-size="7" font-family="Fira Code">across 2,900+ co.</text>
+          </svg>
+        </div>
+
         <div class="proj-metric">920K+ real layoffs across 2,900+ companies analysed</div>
         <p class="proj-desc">
-          Analysed the 2026 tech layoff wave using real data from layoffs.fyi (2020–2026). Built a
-          3-page Power BI dashboard covering yearly trends, industry / country breakdowns, and an
-          AI-attribution lens separating AI-cited layoffs from broader cost-cutting. DAX measures
-          include YoY % change and rolling aggregations.
+          Analysed the 2026 tech layoff wave using real data from layoffs.fyi (2020–2026). 3-page Power BI
+          dashboard covering yearly trends, industry/country breakdowns, and an AI-attribution lens
+          separating AI-cited layoffs from broader cost-cutting. DAX measures include YoY % change and rolling aggregations.
         </p>
         <div class="proj-tags">
           <span class="proj-tag">Power BI</span>
@@ -781,15 +894,155 @@ footer a{color:var(--green2);text-decoration:none}
           <span class="proj-tag">SQL</span>
           <span class="proj-tag">Data Storytelling</span>
         </div>
-        <a href="https://github.com/darshitjayswal1/ai-tech-layoffs-2026"
-           target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        <div class="proj-links">
+          <a href="https://github.com/darshitjayswal1/ai-tech-layoffs-2026"
+             target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 03 — Python -->
+      <div class="proj-card reveal" data-category="python">
+        <div class="proj-category python">Python</div>
+        <div class="proj-num">project_03 · python · pandas · plotly</div>
+        <h3 class="proj-title">Superstore Sales Intelligence</h3>
+
+        <!-- Mini chart: regional bars -->
+        <div class="proj-chart-preview" style="align-items:flex-end;padding:8px 12px;gap:4px">
+          <svg width="100%" height="100%" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Region bars -->
+            <rect x="10"  y="6"  width="50" height="40" rx="2" fill="#39ff8a"/>
+            <rect x="68"  y="15" width="50" height="31" rx="2" fill="rgba(57,255,138,.7)"/>
+            <rect x="126" y="21" width="50" height="25" rx="2" fill="rgba(57,255,138,.5)"/>
+            <rect x="184" y="26" width="50" height="20" rx="2" fill="rgba(57,255,138,.35)"/>
+            <!-- % labels inside bars -->
+            <text x="35"  y="22" text-anchor="middle" fill="#0d1210" font-size="9" font-family="Space Mono" font-weight="700">31.6%</text>
+            <text x="93"  y="30" text-anchor="middle" fill="#0d1210" font-size="9" font-family="Space Mono" font-weight="700">26.2%</text>
+            <text x="151" y="35" text-anchor="middle" fill="#0d1210" font-size="8" font-family="Space Mono" font-weight="700">22.3%</text>
+            <text x="209" y="40" text-anchor="middle" fill="#0d1210" font-size="8" font-family="Space Mono" font-weight="700">19.9%</text>
+            <!-- Region labels -->
+            <text x="35"  y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">West</text>
+            <text x="93"  y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">East</text>
+            <text x="151" y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">Central</text>
+            <text x="209" y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">South</text>
+          </svg>
+        </div>
+
+        <div class="proj-metric">West region drives 31.6% revenue — Technology leads margin at 17.1%</div>
+        <p class="proj-desc">
+          End-to-end EDA of 10,000+ retail transactions across 4 U.S. regions. Decomposed sales performance
+          by category, sub-category, and customer segment. 8 production-quality visualisations covering
+          regional share, category margin, time-series trends, and sub-category profit deep-dives using
+          Matplotlib, Seaborn, and Plotly.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Pandas</span>
+          <span class="proj-tag">Matplotlib</span>
+          <span class="proj-tag">Seaborn</span>
+          <span class="proj-tag">Plotly</span>
+          <span class="proj-tag">EDA</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/darshitjayswal1/superstore-sales-dashboard"
+             target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 04 — Python -->
+      <div class="proj-card reveal rd1" data-category="python">
+        <div class="proj-category python">Python</div>
+        <div class="proj-num">project_04 · python · plotly · funnel-analysis</div>
+        <h3 class="proj-title">SaaS Acquisition & Retention Analysis</h3>
+
+        <!-- Mini chart: funnel -->
+        <div class="proj-chart-preview" style="align-items:center;padding:8px 12px;gap:0">
+          <svg width="100%" height="100%" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Funnel stages as horizontal bars from center -->
+            <rect x="10"  y="4"  width="200" height="10" rx="2" fill="#39ff8a" opacity="0.9"/>
+            <rect x="20"  y="18" width="150" height="10" rx="2" fill="#39ff8a" opacity="0.65"/>
+            <rect x="36"  y="32" width="110" height="10" rx="2" fill="#39ff8a" opacity="0.45"/>
+            <rect x="55"  y="46" width="72"  height="6"  rx="2" fill="#39ff8a" opacity="0.3"/>
+            <!-- Stage labels -->
+            <text x="215" y="13" fill="#6b7f71" font-size="8" font-family="Fira Code">Lead · 100%</text>
+            <text x="175" y="27" fill="#6b7f71" font-size="8" font-family="Fira Code">Signup · 42%</text>
+            <text x="152" y="41" fill="#6b7f71" font-size="8" font-family="Fira Code">Verified · 29%</text>
+            <text x="132" y="52" fill="#6b7f71" font-size="7" font-family="Fira Code">Paid · 22%</text>
+          </svg>
+        </div>
+
+        <div class="proj-metric">Organic converts 30% vs Paid 16.9% — LinkedIn CAC $143, best channel</div>
+        <p class="proj-desc">
+          Full acquisition funnel analysis (Lead → Signup → Verified → Paid) across 4 channels with CAC
+          and ROI comparison. Cohort retention heatmap identifying Month 1 as the critical drop-off point.
+          MRR trend by traffic source, regional breakdown, and interactive HTML dashboard with 6 Plotly charts.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Plotly</span>
+          <span class="proj-tag">Cohort Analysis</span>
+          <span class="proj-tag">Funnel Analytics</span>
+          <span class="proj-tag">MRR</span>
+          <span class="proj-tag">CAC / ROI</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/darshitjayswal1/saas-churn-acquisition-analysis"
+             target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 05 — Python -->
+      <div class="proj-card reveal rd2" data-category="python">
+        <div class="proj-category python">Python</div>
+        <div class="proj-num">project_05 · python · scipy · statistical-testing</div>
+        <h3 class="proj-title">A/B Testing: Checkout Redesign Impact</h3>
+
+        <!-- Mini chart: A vs B comparison -->
+        <div class="proj-chart-preview" style="align-items:flex-end;padding:8px 28px;gap:0">
+          <svg width="100%" height="100%" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Control bar -->
+            <rect x="30" y="22" width="60" height="24" rx="2" fill="rgba(57,255,138,.3)"/>
+            <text x="60" y="18" text-anchor="middle" fill="#6b7f71" font-size="9" font-family="Fira Code">Control</text>
+            <text x="60" y="36" text-anchor="middle" fill="#eef5f0" font-size="10" font-family="Space Mono" font-weight="700">3.5%</text>
+            <!-- Variant bar -->
+            <rect x="110" y="6"  width="60" height="40" rx="2" fill="#39ff8a"/>
+            <text x="140" y="18" text-anchor="middle" fill="#0d1210" font-size="9" font-family="Fira Code" font-weight="700">Variant</text>
+            <text x="140" y="36" text-anchor="middle" fill="#0d1210" font-size="11" font-family="Space Mono" font-weight="700">4.9%</text>
+            <!-- Uplift arrow -->
+            <text x="185" y="15" fill="#6b7f71" font-size="7" font-family="Fira Code">uplift</text>
+            <text x="183" y="30" fill="#39ff8a" font-size="13" font-family="Space Mono" font-weight="700">+40%</text>
+            <text x="182" y="43" fill="#3d4f43" font-size="7" font-family="Fira Code">p &lt; 0.0001</text>
+            <!-- CVR label -->
+            <text x="60"  y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">CVR</text>
+            <text x="140" y="50" text-anchor="middle" fill="#3d4f43" font-size="7" font-family="Fira Code">CVR</text>
+          </svg>
+        </div>
+
+        <div class="proj-metric">+$970K projected annual uplift — 40% CVR improvement (p &lt; 0.0001)</div>
+        <p class="proj-desc">
+          Rigorous A/B test analysis for an e-commerce checkout redesign across 10,000 users. Control CVR 3.5%
+          vs Variant 4.9%. Chi-Square confirms statistical significance (p &lt; 0.0001). Includes Wilson confidence
+          intervals, Independent T-Test on revenue per user, Mann-Whitney U on session duration, device
+          segmentation, and annual revenue impact model projecting +$970K/year uplift.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">SciPy</span>
+          <span class="proj-tag">Chi-Square</span>
+          <span class="proj-tag">Hypothesis Testing</span>
+          <span class="proj-tag">Wilson CI</span>
+          <span class="proj-tag">Revenue Impact</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/darshitjayswal1/ab-testing-ecommerce-analysis"
+             target="_blank" rel="noopener" class="proj-link">cd ./github →</a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ─── -->
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
     <div class="eyebrow">// 04. experience</div>
@@ -866,7 +1119,7 @@ footer a{color:var(--green2);text-decoration:none}
   </div>
 </section>
 
-<!-- ─── CERTIFICATIONS ─── -->
+<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-inner">
     <div class="eyebrow">// 05. certifications</div>
@@ -884,7 +1137,7 @@ footer a{color:var(--green2);text-decoration:none}
   </div>
 </section>
 
-<!-- ─── CONTACT ─── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="contact-inner">
@@ -908,7 +1161,7 @@ footer a{color:var(--green2);text-decoration:none}
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer>
   // built by <a href="https://darshitjayswal1.github.io">darshit_jayswal</a> · data &amp; bi analyst · 2026
 </footer>
@@ -917,7 +1170,7 @@ footer a{color:var(--green2);text-decoration:none}
 (function(){
   'use strict';
 
-  /* ── Typed role ── */
+  /* Typed role */
   const words = ['data_analyst','power_bi_developer','business_analyst','bi_developer'];
   const el = document.getElementById('typed-text');
   let wi=0,ci=0,del=false;
@@ -934,7 +1187,7 @@ footer a{color:var(--green2);text-decoration:none}
   }
   setTimeout(type,800);
 
-  /* ── Counter animation ── */
+  /* Counter animation */
   function animCount(el){
     const target=+el.dataset.target,dur=1800,step=16;
     const inc=target/(dur/step);let cur=0;
@@ -954,7 +1207,25 @@ footer a{color:var(--green2);text-decoration:none}
   const sr=document.querySelector('.stats-row');
   if(sr)cObs.observe(sr);
 
-  /* ── Scroll reveal ── */
+  /* Project filter */
+  const filterBtns = document.querySelectorAll('.pf-btn');
+  const projCards  = document.querySelectorAll('.proj-card');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      projCards.forEach(card=>{
+        if(f==='all'||card.dataset.category===f){
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  /* Scroll reveal */
   const rObs=new IntersectionObserver((ents)=>{
     ents.forEach(e=>{
       if(e.isIntersecting){e.target.classList.add('visible');rObs.unobserve(e.target);}
@@ -962,7 +1233,7 @@ footer a{color:var(--green2);text-decoration:none}
   },{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>rObs.observe(el));
 
-  /* ── Active nav ── */
+  /* Active nav */
   const secs=document.querySelectorAll('section[id]');
   const navAs=document.querySelectorAll('.nav-links a');
   const nObs=new IntersectionObserver((ents)=>{
@@ -976,7 +1247,7 @@ footer a{color:var(--green2);text-decoration:none}
   },{rootMargin:'-40% 0px -55% 0px'});
   secs.forEach(s=>nObs.observe(s));
 
-  /* ── Hero entrance ── */
+  /* Hero entrance */
   const hl=document.querySelector('.hero-left');
   const hp=document.querySelector('.hero-photo-col');
   const sc=document.querySelector('.stats-row');
